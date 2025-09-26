@@ -18,7 +18,7 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
-    "prepare": "husky",
+    "prepare": "husky && husky install",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
@@ -106,8 +106,8 @@
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-vue": "^10.3.0",
     "gradient-string": "^3.0.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.1",
     "postcss": "^8.5.6",
     "postcss-html": "^1.8.0",
     "postcss-load-config": "^6.0.1",
