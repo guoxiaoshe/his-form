@@ -16,6 +16,15 @@ export default {
         title: "github示例",
         showParent: true
       }
+    },
+    {
+      path: "/designer/doctor",
+      name: "doctor",
+      component: () => import("@/views/designer/Doctor.vue"),
+      meta: {
+        title: "doctor示例",
+        showParent: true
+      }
     }
   ]
 } satisfies RouteConfigsTable;
