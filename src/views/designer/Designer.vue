@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="fcd-container" class="h-[calc(100vh-190px)]">
     <div class="_fc-top">
       <div
         v-if="topImg"
@@ -193,7 +193,7 @@ const TITLE = [
 ];
 
 export default {
-  name: "app",
+  name: "Designer",
   components: {
     ConfigPanel,
     ArrowDown
