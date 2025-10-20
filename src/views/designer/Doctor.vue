@@ -27,6 +27,10 @@ const config = ref({
   ],
   // 组件配置设置
   switchType: false,
+  configFormOrder: ["base", "validate"],
+  hiddenItemConfig: {
+    default: ["field", "formCreateCol>span", "control"]
+  },
   // 表单配置设置
   hiddenFormConfig: [
     "event",
