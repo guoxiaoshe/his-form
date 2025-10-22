@@ -2,7 +2,7 @@ export default {
   path: "/designer",
   name: "Designer",
   meta: {
-    icon: "✏️",
+    icon: "EditPen",
     // showLink: false,
     title: "设计表单",
     rank: 8

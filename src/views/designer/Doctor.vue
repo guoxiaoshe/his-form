@@ -1,6 +1,6 @@
 <template>
   <div class="h-[calc(100vh-160px)]">
-    <fc-designer ref="designer" :config="config" />
+    <fc-designer ref="designer" :config="config" @save="handleSave" />
   </div>
 </template>
 
@@ -41,4 +41,7 @@ const config = ref({
     "inlineMessage"
   ]
 });
+const handleSave = (formConfig: any) => {
+  console.log("表单配置：", formConfig);
+};
 </script>
