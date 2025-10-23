@@ -2,7 +2,6 @@ export default {
   path: "/learn",
   name: "Learn",
   meta: {
-    icon: "EditPen",
     // showLink: false,
     title: "学习PureAdmin",
     rank: 10

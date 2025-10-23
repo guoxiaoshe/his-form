@@ -18,6 +18,14 @@ const setLocalStorage = async () => {
   await lf.setItem("pureadmin_test_key", localStorageValue.value);
   alert("已设置localStorage，请打开控制台查看");
 };
+
+const lfKey = ref("pureadmin_test_key");
+const lfValue = ref("");
+// 根据 lfKey 动态读取 localForage 的值
+const getLocalStorageValue = async () => {
+  const value = await lf.getItem<string>(lfKey.value);
+  lfValue.value = value || "";
+};
 </script>
 
 <template>
@@ -28,7 +36,9 @@ const setLocalStorage = async () => {
     <el-input v-model="localStorageValue" />
     <el-button @click="setLocalStorage">设置</el-button>
     <h3>读取本地存储</h3>
-    <pre>{{ localStorageValue }}</pre>
+    <el-input v-model="lfKey" />
+    <el-button @click="getLocalStorageValue">读取</el-button>
+    <pre>{{ lfValue }}</pre>
   </div>
 </template>
 

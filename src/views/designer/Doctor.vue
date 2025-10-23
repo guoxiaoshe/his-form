@@ -6,6 +6,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { localForage } from "@/utils/localforage";
+import { message, closeAllMessage } from "@/utils/message";
+
+const lf = localForage();
 
 const designer = ref();
 const config = ref({
@@ -41,7 +45,9 @@ const config = ref({
     "inlineMessage"
   ]
 });
-const handleSave = (formConfig: any) => {
+const handleSave = async (formConfig: any) => {
   console.log("表单配置：", formConfig);
+  await lf.setItem("test_form_config", formConfig);
+  message("表单配置已保存", { type: "success" });
 };
 </script>
