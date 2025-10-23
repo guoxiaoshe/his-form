@@ -1,11 +1,17 @@
 <template>
-  <form-create
-    v-model="formData"
-    v-model:api="fapi"
-    :rule="rule"
-    :option="option"
-    @submit="onSubmit"
-  />
+  <div class="bg-white rounded p-4 h-full overflow-y-auto">
+    <form-create
+      v-model="formData"
+      v-model:api="fapi"
+      :rule="rule"
+      :option="option"
+      @submit="onSubmit"
+    />
+    <div class="mt-4">
+      <h4>表单填写数据</h4>
+      <pre>{{ formData }}</pre>
+    </div>
+  </div>
 </template>
 
 <script setup>
