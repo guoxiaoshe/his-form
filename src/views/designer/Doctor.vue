@@ -45,7 +45,22 @@ const config = ref({
     "inlineMessage"
   ]
 });
-const handleSave = async (formConfig: any) => {
+
+const getFormConfigFromLF = async (): Promise<FormConfig | null> => {
+  const config = await lf.getItem<FormConfig>("test_form_config");
+  return config;
+};
+
+const init = async () => {
+  const formConfig = await getFormConfigFromLF();
+  const { options, rule } = formConfig;
+  if (formConfig && designer.value) {
+    designer.value.setRule(rule);
+    designer.value.setOptions(options);
+  }
+};
+init();
+const handleSave = async (formConfig: FormConfig) => {
   console.log("表单配置：", formConfig);
   await lf.setItem("test_form_config", formConfig);
   message("表单配置已保存", { type: "success" });

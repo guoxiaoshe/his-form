@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import formCreate from "@form-create/element-ui";
 import { localForage } from "@/utils/localforage";
@@ -26,8 +26,13 @@ const fapi = ref(null);
 const formData = ref({});
 // 从 localForage 读取表单配置
 const loadFormConfig = async () => {
-  const config = await lf.getItem("test_form_config");
-  console.log(config);
+  const config = await lf.getItem<FormConfig>("test_form_config");
+  console.log(
+    "options:",
+    JSON.parse(config.options),
+    "rule:",
+    JSON.parse(config.rule)
+  );
   if (config) {
     option.value = formCreate.parseJson(config.options);
     rule.value = formCreate.parseJson(config.rule);

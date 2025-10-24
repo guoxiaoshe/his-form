@@ -78,3 +78,8 @@ interface ComponentElRef<T extends HTMLElement = HTMLDivElement> {
 function parseInt(s: string | number, radix?: number): number;
 
 function parseFloat(string: string | number): number;
+
+interface FormConfig {
+  options: string;
+  rule: string;
+}
