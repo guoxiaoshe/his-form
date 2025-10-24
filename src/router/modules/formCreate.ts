@@ -22,7 +22,8 @@ export default {
       component: () => import("@/views/fc/lesson01.vue"),
       meta: {
         title: "静态普通表单",
-        showParent: true
+        showParent: true,
+        showLink: false
       }
     },
     {
@@ -31,7 +32,8 @@ export default {
       component: () => import("@/views/fc/lesson02.vue"),
       meta: {
         title: "静态医学表单",
-        showParent: true
+        showParent: true,
+        showLink: false
       }
     }
   ]

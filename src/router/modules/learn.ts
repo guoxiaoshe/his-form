@@ -2,7 +2,7 @@ export default {
   path: "/learn",
   name: "Learn",
   meta: {
-    // showLink: false,
+    showLink: false,
     title: "学习PureAdmin",
     rank: 10
   },

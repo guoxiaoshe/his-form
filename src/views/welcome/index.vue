@@ -95,11 +95,9 @@ const navigate = (path: string) => {
               <h3
                 class="text-lg font-semibold text-gray-800 group-hover:text-teal-600"
               >
-                动态表单示例
+                去填写
               </h3>
-              <p class="mt-2 text-sm text-gray-500">
-                可配置、动态渲染的表单示例，包含验证与数据绑定，便于快速集成与测试。
-              </p>
+              <p class="mt-2 text-sm text-gray-500">患者角色填写和提交表单</p>
             </div>
           </div>
         </div>
@@ -136,10 +134,10 @@ const navigate = (path: string) => {
               <h3
                 class="text-lg font-semibold text-gray-800 group-hover:text-indigo-600"
               >
-                Doctor 示例
+                去设计
               </h3>
               <p class="mt-2 text-sm text-gray-500">
-                医生端/问诊场景示例，展示表单、列表与交互模式，供参考与扩展。
+                医生端/问诊场景，通过表单设计器设计表单。
               </p>
             </div>
           </div>
