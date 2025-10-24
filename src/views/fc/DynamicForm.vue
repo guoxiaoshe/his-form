@@ -1,5 +1,6 @@
 <template>
   <div class="bg-white rounded p-4 h-full overflow-y-auto">
+    <el-button @click="loadFormData">载入上次结果</el-button>
     <form-create
       v-model="formData"
       v-model:api="fapi"
@@ -18,6 +19,7 @@
 import { ref } from "vue";
 import formCreate from "@form-create/element-ui";
 import { localForage } from "@/utils/localforage";
+import { message } from "@/utils/message";
 const lf = localForage();
 
 const option = ref();
@@ -43,8 +45,17 @@ const loadFormConfig = async () => {
 };
 loadFormConfig();
 
-const onSubmit = formData => {
-  //todo 提交表单
-  console.log("提交表单", formData);
+// 从localForage获取表单填写结果
+const loadFormData = async () => {
+  const data = await lf.getItem("dynamic_form_data");
+  if (data) {
+    formData.value = data;
+  }
+};
+
+const onSubmit = async data => {
+  // 把结果保存到 localForage
+  await lf.setItem("dynamic_form_data", data);
+  message("表单数据已保存到本地存储", { type: "success" });
 };
 </script>
