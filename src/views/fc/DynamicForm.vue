@@ -1,17 +1,34 @@
 <template>
-  <div class="bg-white rounded p-4 h-full overflow-y-auto">
-    <el-button @click="loadFormData">载入上次结果</el-button>
-    <form-create
-      v-model="formData"
-      v-model:api="fapi"
-      :rule="rule"
-      :option="option"
-      @submit="onSubmit"
-    />
-    <div class="mt-4">
-      <h4>表单填写数据</h4>
-      <pre>{{ formData }}</pre>
-    </div>
+  <div
+    class="bg-white rounded-xl p-6 h-full overflow-y-auto flex flex-col gap-6"
+  >
+    <!-- 顶部操作栏 -->
+    <header class="flex items-center justify-between">
+      <h3 class="text-lg font-semibold text-gray-800">动态表单</h3>
+      <el-button type="primary" size="default" @click="loadFormData">
+        载入上次结果
+      </el-button>
+    </header>
+
+    <!-- 表单区 -->
+    <section class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+      <form-create
+        v-model="formData"
+        v-model:api="fapi"
+        :rule="rule"
+        :option="option"
+        @submit="onSubmit"
+      />
+    </section>
+
+    <!-- 结果展示区 -->
+    <section>
+      <h4 class="text-base font-medium text-gray-600 mb-2">表单填写数据</h4>
+      <pre
+        class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-800 overflow-x-auto"
+        >{{ JSON.stringify(formData, null, 2) }}</pre
+      >
+    </section>
   </div>
 </template>
 
